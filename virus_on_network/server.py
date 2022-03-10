@@ -12,7 +12,8 @@ def network_portrayal(G):
     # The model ensures there is always 1 agent per node
 
     def node_color(agent):
-        return {State.INFECTED: "#FF0000", State.SUSCEPTIBLE: "#008000"}.get(
+        return {State.INFECTED: "#FF0000", State.SUSCEPTIBLE: "#008000",
+                State.MUTATED: '#800080'}.get(
             agent.state, "#808080"
         )
 
@@ -58,6 +59,7 @@ chart = ChartModule(
         {"Label": "Infected", "Color": "#FF0000"},
         {"Label": "Susceptible", "Color": "#008000"},
         {"Label": "Resistant", "Color": "#808080"},
+        {"Label": "Mutated", "Color": "#800080"}
     ]
 )
 
@@ -104,6 +106,15 @@ model_params = {
         0.1,
         description="Probability that susceptible neighbor will be infected",
     ),
+    "virus_mutation": UserSettableParameter(
+        "slider",
+        "Virus Mutation Chance",
+        0.1,
+        0.0,
+        0.4,
+        0.01,
+        description="Probability that the virus will evolve",
+    ),
     "virus_check_frequency": UserSettableParameter(
         "slider",
         "Virus Check Frequency",
@@ -135,6 +146,7 @@ model_params = {
 }
 
 server = ModularServer(
-    VirusOnNetwork, [network, MyTextElement(), chart], "Virus Model", model_params
+    VirusOnNetwork, [network, MyTextElement(
+    ), chart], "Virus Model", model_params
 )
 server.port = 8521
