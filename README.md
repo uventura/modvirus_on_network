@@ -1,4 +1,4 @@
-# virus_on_network
+# Modfied Virus on Network
 <br>
 O modelo utilizado tem como objetivo inicial descrever a propagação de um vírus em uma rede e como a mesma pode reagir diante desta circunstância. Analisando um vírus observando de um ponto de vista biológico, uma característica fundamental trata-se da sua capacidade em mutar diante a situações adversas, assim, será acrescentado a possibilidade de mutação do mesmo, sendo esta uma mutação irá diminuir a possibilidade de resistência, aumentar o nível de sucetividade a adquirir vírus e aumentar a a probabilidade de propagação do vírus.
 
@@ -18,4 +18,17 @@ Como resultados temos que a princípio ocorre um pico no aumento do vírus, cont
 </p>
 <p>
 Acrescentou-se um elemento de slider em sua interface para que fosse possível controlar a probabilidade de mutação.
+</p>
+
+<h3>Procedimentos</h3>
+<p>
+Para execução do projeto, pode-se através do uso da versão 3 de python realizar o seguinte comando:
+<code>
+python3 run.py
+</code>
+<br>
+Assim, será possível executá-lo.
+</p>
+<p>
+Para análise e exploração dos arquivos, dentro do repositório e na pasta "virus_on_network" existem os arquivos com suas respectivas modificações, sendo <code>model.py</code> responsável por descrever o modelo da simulação, assim como seus agentes e <code>server.py</code> responsável por definir aspectos gerais de execução.
 </p>
